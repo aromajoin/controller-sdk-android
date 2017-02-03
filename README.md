@@ -1,1 +1,1 @@
-# controller-sdk-android
+# Controller SDK for Android
