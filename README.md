@@ -1,15 +1,16 @@
 # Controller SDK for Android
-
+---------
 [ ![Download](https://api.bintray.com/packages/quangnguyen/maven/controller-sdk/images/download.svg) ](https://bintray.com/quangnguyen/maven/controller-sdk/_latestVersion)
 
 **An Android version of AromaShooterController library which is used to communicate with Aroma Shooter devices**  
 
 ##Table of Contents
-1. Dependency
-2. Usage
-3. License
+1. [Dependency](https://github.com/aromajoin/controller-sdk-android#dependency)
+2. [Usage](https://github.com/aromajoin/controller-sdk-android#usage)
+    * [Connect devices](https://github.com/aromajoin/controller-sdk-android#connect-devices)
+    * [Diffuse scents](https://github.com/aromajoin/controller-sdk-android#diffuse-scents)
+3. [License](https://github.com/aromajoin/controller-sdk-android#license)
 
----------
 ###Dependency  
 
 The Gradle dependency is available via jCenter. 
@@ -32,7 +33,7 @@ repositories{
 ```
 
 ###Usage  
-#####Connect to Aroma Shooter devices
+#####Connect devices
 There are 3 options to have *connection screen* in your application:   
 1. Extend **ASControllerBaseActivity** which has a bar button to go to the default connection Screen.
 2. Use Intent to go to the default connection screen normally :    
@@ -41,21 +42,27 @@ There are 3 options to have *connection screen* in your application:
             startActivity(intent);
         ```
 3. Write your own connection part using APIs  
-    - Get the reference of AromaShooterController: ``` AromaShooterController aromaShooterController = AromaShooterController.getInstance(); ```
+    - Get the reference of AromaShooterController: 
+    ```java
+    AromaShooterController aromaShooterController = AromaShooterController.getInstance(); 
+    ```
     - Discover  :  
-     ```aromaShooterController.startScanning(getApplicationContext());```    
-     Don't forget to stop scanning when pause or stop activity/fragment: ```  
+     ```java
+     aromaShooterController.startScanning(getApplicationContext());
+     ```    
+     Don't forget to stop scanning when pause or stop activity/fragment:  
+    ```java
     protected void onPause() {  
         super.onPause();  
         aromaShooterController.stopScanning(getApplicationContext());  
     }  
     ```
     - Connect(can connect to multiple devices):  
-    ```  
+    ```java  
         aromaShooterController.connectDevice(aromaShooterList);
      ```  
     - Disconnect:  
-    ```  
+    ```java  
         aromaShooterController.disconnectDevice(aromaShooter);
     ```
 ####Diffuse scents 

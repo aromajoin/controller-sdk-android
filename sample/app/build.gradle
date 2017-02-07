@@ -1,0 +1,38 @@
+apply plugin: 'com.android.application'
+repositories{
+    maven {
+        url  "http://dl.bintray.com/quangnguyen/maven"
+    }
+}
+
+// Manifest version information
+def versionMajor = 0
+def versionMinor = 1
+def versionPatch = 0
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        applicationId "com.aromajoin.controllersdksample"
+        minSdkVersion 19
+        targetSdkVersion 25
+        versionCode versionMajor * 10000 + versionMinor * 100 + versionPatch
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:25.0.0'
+    compile 'com.aromajoin.sdk:controller:1.0.0'
+//    compile project(':controller-sdk')
+}
