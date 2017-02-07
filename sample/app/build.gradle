@@ -34,5 +34,4 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:25.0.0'
     compile 'com.aromajoin.sdk:controller:1.0.0'
-//    compile project(':controller-sdk')
 }
