@@ -33,7 +33,7 @@ repositories{
 ```
 
 ###Usage  
-#####Connect devices
+####Connect devices
 There are 3 options to have *connection screen* in your application:   
 1. Extend **ASControllerBaseActivity** which has a bar button to go to the default connection Screen.
 2. Use Intent to go to the default connection screen normally :    
