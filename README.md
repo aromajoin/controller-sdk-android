@@ -37,38 +37,38 @@ repositories{
 There are 3 options to have *connection screen* in your application:   
 1. Extend **ASControllerBaseActivity** which has a bar button to go to the default connection Screen.
 2. Use Intent to go to the default connection screen normally :    
-        ```java  
-            Intent intent = new Intent(YourCurrentActivity.this,ASControllerConnectionActivity.class);
-            startActivity(intent);
-        ```
+```java
+        Intent intent = new Intent(YourCurrentActivity.this, ASControllerConnectionActivity.class);  
+        startActivity(intent);
+```
 3. Write your own connection part using APIs  
     - Get the reference of AromaShooterController: 
     ```java
     AromaShooterController aromaShooterController = AromaShooterController.getInstance(); 
     ```
     - Discover  :  
-     ```java
-     aromaShooterController.startScanning(getApplicationContext());
-     ```    
-     Don't forget to stop scanning when pause or stop activity/fragment:  
+    ```java
+    aromaShooterController.startScanning(getApplicationContext());
+    ```    
+    Don't forget to stop scanning when pause or stop activity/fragment:  
     ```java
     protected void onPause() {  
         super.onPause();  
         aromaShooterController.stopScanning(getApplicationContext());  
-    }  
+    }
     ```
     - Connect(can connect to multiple devices):  
-    ```java  
-        aromaShooterController.connectDevice(aromaShooterList);
-     ```  
+    ```java
+    aromaShooterController.connectDevice(aromaShooterList);
+    ```  
     - Disconnect:  
-    ```java  
-        aromaShooterController.disconnectDevice(aromaShooter);
+    ```java
+    aromaShooterController.disconnectDevice(aromaShooter);
     ```
 ####Diffuse scents 
 Using *Diffuse APIs*  :
-```java  
- aromaShooterController.diffuse(aromaShooters,durration,speed,ports); 
+```java
+aromaShooterController.diffuse(aromaShooters,durration,speed,ports); 
 ```  
 
 ###License  
