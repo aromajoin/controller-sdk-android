@@ -18,9 +18,9 @@ The Gradle dependency is available via Maven Central.
 Firstly, add this to your app/build.gradle `repositories`:
 
 ```gradle
-   maven {
-        url  "http://dl.bintray.com/quangnguyen/maven"
-   }
+maven {
+    url  "http://dl.bintray.com/quangnguyen/maven"
+}
 ```
 
 Then, add the `controller-sdk` dependence in your module's `build.gradle` file:
