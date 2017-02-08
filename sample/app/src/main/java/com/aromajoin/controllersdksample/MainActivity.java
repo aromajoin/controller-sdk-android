@@ -47,12 +47,12 @@ public class MainActivity extends ASControllerBaseActivity implements View.OnCli
         findViewById(R.id.port6Button).setOnClickListener(this);
     }
 
+    /**
+     * Get ports and trigger diffusing scents
+     */
     @Override
     public void onClick(View view) {
-        /**
-         * Diffuse scent at specific port
-         * @param view
-         */
+
         int viewId = view.getId();
 
         switch (viewId) {
