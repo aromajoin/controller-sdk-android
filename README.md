@@ -13,22 +13,22 @@
 
 ###Dependency  
 
-The Gradle dependency is available via jCenter. 
-Add this in your module's `build.gradle` file:
+The Gradle dependency is available via Maven Central. 
+
+Firstly, add this to your app/build.gradle `repositories`:
+
+```gradle
+   maven {
+        url  "http://dl.bintray.com/quangnguyen/maven"
+   }
+```
+
+Then, add the `controller-sdk` dependence in your module's `build.gradle` file:
 
 ```gradle
 dependencies {
     // ... other dependencies
     compile 'com.aromajoin.sdk:controller:1.0.0'
-}
-```
-If it doesn't resolve through jCenter, please add this to your app/build.gradle file:
-
-```gradle
-repositories{
-    maven {
-        url  "http://dl.bintray.com/quangnguyen/maven"
-    }
 }
 ```
 
