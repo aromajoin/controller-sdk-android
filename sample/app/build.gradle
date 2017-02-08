@@ -1,9 +1,4 @@
 apply plugin: 'com.android.application'
-repositories{
-    maven {
-        url  "http://dl.bintray.com/quangnguyen/maven"
-    }
-}
 
 // Manifest version information
 def versionMajor = 0
