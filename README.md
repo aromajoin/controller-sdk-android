@@ -1,6 +1,8 @@
 # Controller SDK for Android
 ---------
 [ ![Download](https://api.bintray.com/packages/quangnguyen/maven/controller-sdk/images/download.svg) ](https://bintray.com/quangnguyen/maven/controller-sdk/_latestVersion)
+[![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0.html)
+
 
 **An Android version of AromaShooterController library which is used to communicate with Aroma Shooter devices**  
 
