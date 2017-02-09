@@ -4,16 +4,23 @@
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 
-**An Android version of AromaShooterController library which is used to communicate with Aroma Shooter devices**  
+**The Android version of AromaShooterController library which is used to communicate with [Aroma Shooter devices](https://aromajoin.com/hardware/shooters/aroma-shooter-1)**  
 
 # Table of Contents
-1. [Dependency](https://github.com/aromajoin/controller-sdk-android#dependency)
-2. [Usage](https://github.com/aromajoin/controller-sdk-android#usage)
+1. [Supported devices](https://github.com/aromajoin/controller-sdk-android#supported-devices)  
+2. [Dependency](https://github.com/aromajoin/controller-sdk-android#dependency)
+3. [Usage](https://github.com/aromajoin/controller-sdk-android#usage)
     * [Connect devices](https://github.com/aromajoin/controller-sdk-android#connect-devices)
     * [Diffuse scents](https://github.com/aromajoin/controller-sdk-android#diffuse-scents)
-3. [License](https://github.com/aromajoin/controller-sdk-android#license)
+4. [License](https://github.com/aromajoin/controller-sdk-android#license)
 
 ---
+
+## Supported devices
+* Aroma Shooter Bluetooth version 
+
+---
+
 ## Dependency  
 
 The Gradle dependency is available via Maven Central. 
