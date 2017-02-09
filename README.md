@@ -1,19 +1,20 @@
 # Controller SDK for Android
----------
+
 [ ![Download](https://api.bintray.com/packages/quangnguyen/maven/controller-sdk/images/download.svg) ](https://bintray.com/quangnguyen/maven/controller-sdk/_latestVersion)
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 
 **An Android version of AromaShooterController library which is used to communicate with Aroma Shooter devices**  
 
-##Table of Contents
+# Table of Contents
 1. [Dependency](https://github.com/aromajoin/controller-sdk-android#dependency)
 2. [Usage](https://github.com/aromajoin/controller-sdk-android#usage)
     * [Connect devices](https://github.com/aromajoin/controller-sdk-android#connect-devices)
     * [Diffuse scents](https://github.com/aromajoin/controller-sdk-android#diffuse-scents)
 3. [License](https://github.com/aromajoin/controller-sdk-android#license)
 
-###Dependency  
+---
+## Dependency  
 
 The Gradle dependency is available via Maven Central. 
 
@@ -34,8 +35,11 @@ dependencies {
 }
 ```
 
-###Usage  
-####Connect devices
+---
+
+## Usage  
+
+### Connect devices
 There are 3 options to have *connection screen* in your application.  
 
 * Extend **ASControllerBaseActivity** which has a bar button to go to the default connection Screen.  
@@ -77,13 +81,15 @@ There are 3 options to have *connection screen* in your application.
 		```
 		
 
-####Diffuse scents 
+### Diffuse scents 
+
 Using *Diffuse APIs*  :
 ```java
 aromaShooterController.diffuse(aromaShooters, durration, speed, ports);
 ``` 
 
-###License  
+---
+## License  
 
 The Apache License (Apache)
 
