@@ -94,6 +94,8 @@ Using *Diffuse APIs*  :
 ```java
 aromaShooterController.diffuse(aromaShooters, durration, speed, ports);
 ``` 
+**For more information, please checkout this repository and refer to the [sample project](https://github.com/aromajoin/controller-sdk-android/tree/master/sample).**  
+**If you get any issues or require any new features, please create a [new issue](https://github.com/aromajoin/controller-sdk-android/issues).**
 
 ---
 ## License  
