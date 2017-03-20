@@ -1,18 +1,24 @@
 apply plugin: 'com.android.application'
 
+repositories {
+    maven {
+        url  "http://dl.bintray.com/quangnguyen/maven"
+    }
+}
+
 // Manifest version information
 def versionMajor = 0
 def versionMinor = 1
 def versionPatch = 0
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
         applicationId "com.aromajoin.controllersdksample"
-        minSdkVersion 19
-        targetSdkVersion 25
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode versionMajor * 10000 + versionMinor * 100 + versionPatch
         versionName "${versionMajor}.${versionMinor}.${versionPatch}"
     }
@@ -25,8 +31,6 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:25.1.0'
-    compile 'com.aromajoin.sdk:controller:1.0.1'
+    compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+    compile "com.aromajoin.sdk:controller:$rootProject.ext.aromajoinControllerVersion"
 }
