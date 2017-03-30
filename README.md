@@ -29,7 +29,7 @@ Firstly, add this to your app/build.gradle `repositories`:
 
 ```gradle
 maven {
-    url  "http://dl.bintray.com/quangnguyen/maven"
+    url  "https://dl.bintray.com/aromajoin/maven/"
 }
 ```
 
