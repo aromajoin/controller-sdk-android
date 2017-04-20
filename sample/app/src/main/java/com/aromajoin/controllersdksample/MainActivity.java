@@ -1,111 +1,78 @@
 package com.aromajoin.controllersdksample;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
-import android.view.View;
 
+import android.widget.Button;
 import com.aromajoin.aromashootercontroller.connection.AromaShooterController;
 import com.aromajoin.aromashootercontroller.connection.model.AromaShooter;
 import com.aromajoin.aromashootercontroller.ui.activity.ASControllerBaseActivity;
 
+import com.jakewharton.rxbinding2.view.RxView;
+import io.reactivex.Observable;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.concurrent.TimeUnit;
 
 /**
- * @author Quang Nguyen
- * © Aromajoin Corporation
- *
  * The class extends the existing activity
  * which contains a bar item menu to go Connection Screen
  *
+ * @author Quang Nguyen
+ * © Aromajoin Corporation
  */
-public class MainActivity extends ASControllerBaseActivity implements View.OnClickListener{
+public class MainActivity extends ASControllerBaseActivity {
 
-    private final int DEFAULT_DURATION = 3000; //milliseconds
-    List<Integer> ports = new ArrayList<>();
+  private final int DEFAULT_DURATION = 3000; // Unit: millisecond
 
-    //Get the instance of AromaShooterController
-    private AromaShooterController aromaShooterController = AromaShooterController.getInstance();
+  //Get the instance of AromaShooterController
+  private AromaShooterController aromaShooterController = AromaShooterController.getInstance();
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+  private List<Button> buttons = new ArrayList<>();
 
-        init();
+  @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+
+    init();
+  }
+
+  private void init() {
+    buttons.add((Button) findViewById(R.id.port1Button));
+    buttons.add((Button) findViewById(R.id.port2Button));
+    buttons.add((Button) findViewById(R.id.port3Button));
+    buttons.add((Button) findViewById(R.id.port4Button));
+    buttons.add((Button) findViewById(R.id.port5Button));
+    buttons.add((Button) findViewById(R.id.port6Button));
+
+    Observable.just(buttons)
+        .flatMapIterable(list -> list)
+        .flatMap(button -> RxView.clicks(button).map(aVoid -> button))
+        .map(view -> {
+          int index = buttons.indexOf(view);
+          return index + 1; // port number
+        })
+        .buffer(100, TimeUnit.MILLISECONDS)
+        .subscribe(ports ->
+          diffuse(convertIntegers(ports))
+        );
+  }
+
+  List<AromaShooter> aromaShooters; // connected device list.
+
+  private void diffuse(int... ports) {
+    aromaShooters = aromaShooterController.getConnectedDevices();
+    if (aromaShooters != null && aromaShooters.size() > 0) {
+      aromaShooterController.diffuse(aromaShooters, DEFAULT_DURATION, 1, ports);
     }
+  }
 
-    private void init(){
-
-        findViewById(R.id.port1Button).setOnClickListener(this);
-        findViewById(R.id.port2Button).setOnClickListener(this);
-        findViewById(R.id.port3Button).setOnClickListener(this);
-        findViewById(R.id.port4Button).setOnClickListener(this);
-        findViewById(R.id.port5Button).setOnClickListener(this);
-        findViewById(R.id.port6Button).setOnClickListener(this);
+  // A helper method to convert Integer list into primitive into array.
+  private int[] convertIntegers(List<Integer> integers) {
+    int[] ret = new int[integers.size()];
+    for (int i = 0; i < ret.length; i++) {
+      ret[i] = integers.get(i).intValue();
     }
-
-    /**
-     * Get ports and trigger diffusing scents
-     */
-    @Override
-    public void onClick(View view) {
-
-        int viewId = view.getId();
-
-        switch (viewId) {
-            case R.id.port1Button:
-                ports.add(1);
-                break;
-            case R.id.port2Button:
-                ports.add(2);
-                break;
-            case R.id.port3Button:
-                ports.add(3);
-                break;
-            case R.id.port4Button:
-                ports.add(4);
-                break;
-            case R.id.port5Button:
-                ports.add(5);
-                break;
-            case R.id.port6Button:
-                ports.add(6);
-                break;
-        }
-
-        new Handler().postDelayed(diffuseTask, 10);
-
-    }
-
-    /**
-     * Use runnable to send command which allows to diffuse multiple ports at the same time.
-     */
-    private Runnable diffuseTask = new Runnable() {
-        @Override
-        public void run() {
-            if (ports.size() == 0) {
-                return;
-            }
-            List<AromaShooter> aromaShooters = aromaShooterController.getConnectedDevices();
-
-            if (aromaShooters != null && aromaShooters.size() > 0) {
-                aromaShooterController.diffuse(aromaShooters, DEFAULT_DURATION, 1, convertIntegers(ports));
-            }
-            ports.clear();
-        }
-    };
-
-
-    //Helper method
-    private int[] convertIntegers(List<Integer> integers) {
-        int[] ret = new int[integers.size()];
-        for (int i = 0; i < ret.length; i++) {
-            ret[i] = integers.get(i).intValue();
-        }
-
-        return ret;
-    }
+    return ret;
+  }
 }
