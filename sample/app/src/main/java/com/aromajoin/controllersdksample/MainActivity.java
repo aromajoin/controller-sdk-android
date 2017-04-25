@@ -3,9 +3,9 @@ package com.aromajoin.controllersdksample;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
-import android.util.Log;
-import android.view.View;
 
+import android.view.View;
+import android.widget.Button;
 import com.aromajoin.aromashootercontroller.connection.AromaShooterController;
 import com.aromajoin.aromashootercontroller.connection.model.AromaShooter;
 import com.aromajoin.aromashootercontroller.ui.activity.ASControllerBaseActivity;

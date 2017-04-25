@@ -1,6 +1,6 @@
 # Controller SDK for Android
 
-[ ![Download](https://api.bintray.com/packages/quangnguyen/maven/controller-sdk/images/download.svg) ](https://bintray.com/quangnguyen/maven/controller-sdk/_latestVersion)
+[ ![Download](https://api.bintray.com/packages/aromajoin/maven/controller-sdk/images/download.svg) ](https://bintray.com/aromajoin/maven/controller-sdk/_latestVersion)
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 
@@ -29,7 +29,7 @@ Firstly, add this to your app/build.gradle `repositories`:
 
 ```gradle
 maven {
-    url  "http://dl.bintray.com/quangnguyen/maven"
+    url  "https://dl.bintray.com/aromajoin/maven/"
 }
 ```
 
