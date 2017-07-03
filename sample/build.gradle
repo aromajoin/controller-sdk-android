@@ -34,7 +34,7 @@ ext {
 
     // Dependencies
     supportLibraryVersion = '25.1.0'
-    aromajoinControllerVersion = '1.0.1'
+    aromajoinControllerVersion = '1.1.0'
     rxJavaVersion = '2.0.8'
     rxAndroidVersion = '2.0.1'
     rxBindingVersion = '2.0.0'
