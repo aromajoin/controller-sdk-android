@@ -38,7 +38,7 @@ Then, add the `controller-sdk` dependence in your module's `build.gradle` file:
 ```gradle
 dependencies {
     // ... other dependencies
-    compile 'com.aromajoin.sdk:controller:1.0.1'
+    compile 'com.aromajoin.sdk:controller:1.1.0'
 }
 ```
 
@@ -90,10 +90,26 @@ There are 3 options to have *connection screen* in your application.
 
 ### Diffuse scents 
 
-Using *Diffuse APIs*  :
 ```java
-aromaShooterController.diffuse(aromaShooters, durration, speed, ports);
-``` 
+/**
+* Diffuses scents at multiple ports at the same time for multiple devices
+*
+* @param aromaShooters list of aroma shooters
+* @param durationMillisec blowing time (Unit: milliseconds)
+* @param booster whether booster is used or not. (if `true`, booster is used and aroma is
+* diffused more strongly.
+* @param ports blowing ports ( 1 ~ 6 )
+*/
+aromaShooterController.diffuse(aromaShooters, durration, booster, ports);
+```  
+### Stop diffusing
+```java
+// Stops diffusing from specific devices
+aromaShooterController.stop(aromaShooters);
+
+// Stops diffusing from all connected devices
+aromaShooterController.stopAll();
+```
 **For more information, please checkout this repository and refer to the [sample project](https://github.com/aromajoin/controller-sdk-android/tree/master/sample).**  
 **If you get any issues or require any new features, please create a [new issue](https://github.com/aromajoin/controller-sdk-android/issues).**
 
