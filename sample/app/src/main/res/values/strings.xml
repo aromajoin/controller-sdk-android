@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">ControllerSDKSample</string>
+  <string name="app_name">ControllerSDKSample</string>
+  <string name="usb_connection">USB connection</string>
+  <string name="ble_connection">BLE connection</string>
 </resources>
