@@ -1,6 +1,6 @@
 # Controller SDK for Android
 
-[ ![Download](https://api.bintray.com/packages/aromajoin/maven/controller-sdk/images/download.svg) ](https://bintray.com/aromajoin/maven/controller-sdk/_latestVersion)
+[ ![Download](https://api.bintray.com/packages/aromajoin/maven/com.aromajoin.sdk%3Aandroid/images/download.svg) ](https://bintray.com/aromajoin/maven/com.aromajoin.sdk%3Aandroid/_latestVersion)
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 
@@ -17,99 +17,127 @@
 ---
 
 ## Supported devices
-* Aroma Shooter Bluetooth version 
-
+* Aroma Shooter Bluetooth BLE version 
+* Aroma Shooter USB version
 ---
 
 ## Dependency  
 
 The Gradle dependency is available via Maven Central. 
 
-Firstly, add this to your app/build.gradle `repositories`:
+Firstly, add this on top of your app/build.gradle:
 
 ```gradle
-maven {
-    url  "https://dl.bintray.com/aromajoin/maven/"
+repositories {
+    maven { url "http://dl.bintray.com/aromajoin/maven" }
+    maven { url "https://jitpack.io" } // We use a third-party library hosted on jitpack
 }
 ```
+
 
 Then, add the `controller-sdk` dependence in your module's `build.gradle` file:
 
 ```gradle
 dependencies {
     // ... other dependencies
-    compile 'com.aromajoin.sdk:controller:1.1.0'
+    compile 'com.aromajoin.sdk:android:2.0.0-rc1'
 }
 ```
 
 ---
 
 ## Usage  
-
-### Connect devices
+### Connect
+There are small differences between BLE connection and USB connetion.
+#### Bluetooth BLE
+In case you are working with Aroma Shooter via Bluetooth BLE connection.
 There are 3 options to have *connection screen* in your application.  
 
-* Extend **ASControllerBaseActivity** which has a bar button to go to the default connection Screen.  
+* Extend **ASBaseActivity** which has a bar button to go to the default connection Screen.  
 
 * Use Intent to go to the default connection screen normally
 
 ```java
-	Intent intent = new Intent(YourCurrentActivity.this, ASControllerConnectionActivity.class);  
+	Intent intent = new Intent(YourCurrentActivity.this, ASConnectionActivity.class);  
 	startActivity(intent);
 ```
 
 * Write your own connection part using APIs  
-    - *Get the reference of AromaShooterController*
+    - *Get the reference of AndroidBLEController*
     ```java
-    AromaShooterController aromaShooterController = AromaShooterController.getInstance(); 
+    AndroidBLEController controller = AndroidBLEController.getInstance(); 
     ```
     - *Discover*  
     	```java
-		aromaShooterController.startScanning(getApplicationContext());
+		controller.startScan(context, discoverCallback);
 		```  
 		
 		Don't forget to stop scanning when pause or stop activity/fragment:  
 		```java
 		protected void onPause() {
 			super.onPause();
-			aromaShooterController.stopScanning(getApplicationContext());
+			controller.stopScan(context);
 		}
 		```
     - *Connect*  
-	 	Multiple devices are allowed to connect at the same time.  
 		
 		```java
-		aromaShooterController.connectDevice(aromaShooterList);  
+		aromaShooterController.connect(aromaShooter, connectCallback);  
 		```
     - Disconnect:  
 	 
 	 	```java
-		aromaShooterController.disconnectDevice(aromaShooter);  
+		aromaShooterController.disconnect(aromaShooter, disconnectCallback);  
 		```
+
+#### USB
+   - *Get the reference of AromaShooterController*
+    ```java
+    AndroidUSBController controller =  new AndroidUSBController(usbManager);
+    ```
+    - *Discover*  
+    	```java
+		controller.scan(discoverCallback);
+		```  
+    - *Connect*  
 		
+		```java
+		aromaShooterController.connect(aromaShooter. connectCallback);  
+		```
+    - Disconnect:  
+	 
+	 	```java
+		aromaShooterController.disconnect(aromaShooter, disconnectCallback);  
+		```
 
 ### Diffuse scents 
 
 ```java
-/**
-* Diffuses scents at multiple ports at the same time for multiple devices
-*
-* @param aromaShooters list of aroma shooters
-* @param durationMillisec blowing time (Unit: milliseconds)
-* @param booster whether booster is used or not. (if `true`, booster is used and aroma is
-* diffused more strongly.
-* @param ports blowing ports ( 1 ~ 6 )
-*/
-aromaShooterController.diffuse(aromaShooters, durration, booster, ports);
+  /**
+   * Diffuses aroma at device's ports.
+   *
+   * @param aromaShooters device to communicate.
+   * @param duration diffusing duration in milliseconds.
+   * @param booster whether booster is used or not.
+   * @param ports port numbers to diffuse aroma.
+   */
+  void diffuse(List<AromaShooter> aromaShooters, int duration, boolean booster, int... ports);
 ```  
 ### Stop diffusing
 ```java
-// Stops diffusing from specific devices
-aromaShooterController.stop(aromaShooters);
+  /**
+   * Stops all ports if they are diffusing aroma.
+   *
+   * @param aromaShooter device to communicate.
+   */
+  void stopAllPorts(AromaShooter aromaShooter);
 
-// Stops diffusing from all connected devices
-aromaShooterController.stopAll();
+  /**
+   * Stops all ports of current connected devices if they are diffusing.
+   */
+  void stopAllPorts();
 ```
+
 **For more information, please checkout this repository and refer to the [sample project](https://github.com/aromajoin/controller-sdk-android/tree/master/sample).**  
 **If you get any issues or require any new features, please create a [new issue](https://github.com/aromajoin/controller-sdk-android/issues).**
 
