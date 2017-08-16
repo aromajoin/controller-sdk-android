@@ -63,7 +63,7 @@ There are 3 options to have *connection screen* in your application.
 ```
 
 * Write your own connection part using APIs  
-    - *Get the reference of AndroidBLEController*
+    - *Get the reference of AndroidBLEController*  
     ```java
     AndroidBLEController controller = AndroidBLEController.getInstance(); 
     ```
@@ -84,14 +84,14 @@ There are 3 options to have *connection screen* in your application.
 		```java
 		aromaShooterController.connect(aromaShooter, connectCallback);  
 		```
-    - Disconnect:  
+    - *Disconnect*  
 	 
 	 	```java
 		aromaShooterController.disconnect(aromaShooter, disconnectCallback);  
 		```
 
 #### USB
-   - *Get the reference of AromaShooterController*
+   - *Get the reference of AndroidUSBController*  
     ```java
     AndroidUSBController controller =  new AndroidUSBController(usbManager);
     ```
@@ -104,7 +104,7 @@ There are 3 options to have *connection screen* in your application.
 		```java
 		aromaShooterController.connect(aromaShooter. connectCallback);  
 		```
-    - Disconnect:  
+    - *Disconnect*  
 	 
 	 	```java
 		aromaShooterController.disconnect(aromaShooter, disconnectCallback);  
