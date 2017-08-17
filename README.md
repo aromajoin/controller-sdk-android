@@ -66,34 +66,30 @@ There are 3 options to have *connection screen* in your application.
 ```
 
 * Write your own connection part using APIs  
-    - *Get the reference of AndroidBLEController*
-		
-      ```java
-       AndroidBLEController controller = AndroidBLEController.getInstance(); 
-      ```
-    - *Discover*
-		
-      ```java
-      controller.startScan(context, discoverCallback);
-      ```  
-      Don't forget to stop scanning when pause or stop activity/fragment:
-			
-			```java
-			protected void onPause() {
-			 super.onPause();
-			 controller.stopScan(context);
-		  }
-			```
-    - *Connect*
-		
-		  ```java
-		  aromaShooterController.connect(aromaShooter, connectCallback);  
-		  ```
-    - *Disconnect*
-		
-	 	  ```java
-		  aromaShooterController.disconnect(aromaShooter, disconnectCallback);  
-		  ```
+	- *Get the reference of AndroidBLEController*  
+		```java
+		AndroidBLEController controller = AndroidBLEController.getInstance(); 
+		```
+	- *Discover*  
+		```java
+		controller.startScan(context, discoverCallback);
+		```  
+		Don't forget to stop scanning when pause or stop activity/fragment:  
+
+		```java
+		protected void onPause() {
+			super.onPause();
+			controller.stopScan(context);
+		}
+		```
+	- *Connect*  
+		```java
+		aromaShooterController.connect(aromaShooter, connectCallback);  
+		```
+	- *Disconnect*  
+		```java
+		aromaShooterController.disconnect(aromaShooter, disconnectCallback);  
+		```
 
 #### USB
 - *Initialize an AndroidUSBController object*  
