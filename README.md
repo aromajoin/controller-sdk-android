@@ -43,7 +43,7 @@ Then, add the `controller-sdk` dependence in your module's `build.gradle` file:
 ```gradle
 dependencies {
     // ... other dependencies
-    compile 'com.aromajoin.sdk:android:2.0.0-rc1'
+    compile 'com.aromajoin.sdk:android:2.*.*'
 }
 ```
 
