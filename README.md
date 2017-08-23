@@ -47,6 +47,18 @@ dependencies {
 }
 ```
 
+Make sure that you enable **Java 8 compile** in your `gradle.build`.
+```gradle
+  android {
+    //...
+    compileOptions {
+      sourceCompatibility JavaVersion.VERSION_1_8
+      targetCompatibility JavaVersion.VERSION_1_8
+    }
+  }
+```
+
+
 ---
 
 ## Usage  
