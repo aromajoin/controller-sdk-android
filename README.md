@@ -12,20 +12,15 @@
 3. [Usage](#usage)
     * [Connect devices](#connect)
     	* [BLE](#bluetooth-ble)
-        * [USB](#usb)
+      * [USB](#usb)
     * [Diffuse scents](#diffuse-scents)
-    * [Proguard](#proguard)
 4. [License](#license)
-
----
 
 ## Supported devices
 * Aroma Shooter Bluetooth BLE version 
 * Aroma Shooter USB version
----
 
-## Dependency  
-
+## Dependency
 The Gradle dependency is available via Maven Central. 
 
 Firstly, add this on top of your app/build.gradle:
@@ -57,9 +52,6 @@ Make sure that you enable **Java 8 compile** in your `gradle.build`.
     }
   }
 ```
-
-
----
 
 ## Usage  
 ### Connect
@@ -152,16 +144,6 @@ There are 3 options to have *connection screen* in your application.
 **For more information, please checkout this repository and refer to the [sample project](https://github.com/aromajoin/controller-sdk-android/tree/master/sample).**  
 **If you get any issues or require any new features, please create a [new issue](https://github.com/aromajoin/controller-sdk-android/issues).**
 
-### Proguard
-[EventBus](https://github.com/greenrobot/EventBus) is utilized inside Controller SDK, so if you use Proguard, make sure to add the following lines in your Proguard file.
-```
--keepattributes *Annotation*
--keepclassmembers class ** {
-    @org.greenrobot.eventbus.Subscribe <methods>;
-}
--keep enum org.greenrobot.eventbus.ThreadMode { *; }
-```
----
 ## License  
 
 The Apache License (Apache)
