@@ -24,24 +24,19 @@
 The Gradle dependency is available via Maven Central. 
 
 Firstly, add this on top of your app/build.gradle:
-
 ```gradle
 repositories {
     maven { url "http://dl.bintray.com/aromajoin/maven" }
     maven { url "https://jitpack.io" } // We use a third-party library hosted on jitpack
 }
 ```
-
-
 Then, add the `controller-sdk` dependence in your module's `build.gradle` file:
-
 ```gradle
 dependencies {
     // ... other dependencies
     compile 'com.aromajoin.sdk:android:2.*.*'
 }
 ```
-
 Make sure that you enable **Java 8 compile** in your `gradle.build`.
 ```gradle
   android {
@@ -52,7 +47,6 @@ Make sure that you enable **Java 8 compile** in your `gradle.build`.
     }
   }
 ```
-
 ## Usage  
 ### Connect
 There are small differences between BLE connection and USB connetion.
@@ -60,21 +54,18 @@ There are small differences between BLE connection and USB connetion.
 In case you are working with Aroma Shooter via Bluetooth BLE connection.
 There are 3 options to have *connection screen* in your application.  
 
-* Extend **ASBaseActivity** which has a bar button to go to the default connection Screen.  
-
-* Use Intent to go to the default connection screen normally
-
+1. Extend **ASBaseActivity** which has a bar button to go to the default connection Screen
+2. Use Intent to go to the default connection screen normally
 ```java
   Intent intent = new Intent(YourCurrentActivity.this, ASConnectionActivity.class);  
   startActivity(intent);
 ```
-
-* Write your own connection part using APIs  
-	- *Get the reference of AndroidBLEController*  
+3. Write your own connection part using APIs  
+	- *Get the reference of AndroidBLEController*
 		```java
 		AndroidBLEController controller = AndroidBLEController.getInstance(); 
 		```
-	- *Discover*  
+	- *Discover*
 		```java
 		controller.startScan(context, discoverCallback);
 		```  
@@ -82,39 +73,38 @@ There are 3 options to have *connection screen* in your application.
 
 		```java
 		protected void onPause() {
-			super.onPause();
-			controller.stopScan(context);
+		  super.onPause();
+		  controller.stopScan(context);
 		}
 		```
-	- *Connect*  
+	- *Connect*
 		```java
 		aromaShooterController.connect(aromaShooter, connectCallback);  
 		```
-	- *Disconnect*  
+	- *Disconnect*
 		```java
 		aromaShooterController.disconnect(aromaShooter, disconnectCallback);  
 		```
 
 #### USB
-- *Initialize an AndroidUSBController object*  
+- *Initialize an AndroidUSBController object*
   ```java
-	AndroidUSBController controller =  new AndroidUSBController(usbManager);
-	```
-- *Discover*  
+  AndroidUSBController controller =  new AndroidUSBController(usbManager);
+  ```
+- *Discover*
   ```java
-	controller.scan(discoverCallback);
-	```  
-- *Connect*  
+  controller.scan(discoverCallback);
+  ```  
+- *Connect*
   ```java
   aromaShooterController.connect(aromaShooter. connectCallback);  
   ```
-- *Disconnect*  
+- *Disconnect*
   ```java
   aromaShooterController.disconnect(aromaShooter, disconnectCallback);  
   ```
 
-### Diffuse scents 
-
+### Diffuse scents
   ```java
   /**
    * Diffuses aroma at device's ports.
