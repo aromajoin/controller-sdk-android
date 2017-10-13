@@ -10,10 +10,12 @@
 1. [Supported devices](#supported-devices)  
 2. [Dependency](#dependency)
 3. [Usage](#usage)
-    * [Connect devices](#connect)
+    * [Connect](#connect)
     	* [BLE](#bluetooth-ble)
       * [USB](#usb)
+    * [Get connected devices](#get-connected-devices)
     * [Diffuse scents](#diffuse-scents)
+    * [Stop diffusing](#stop-diffusing)
 4. [License](#license)
 
 ## Supported devices
@@ -103,32 +105,35 @@ There are 3 options to have *connection screen* in your application.
   ```java
   aromaShooterController.disconnect(aromaShooter, disconnectCallback);  
   ```
+### Get connected devices
+  ```java
+  List<AromaShooter> aromaShooters = controller.getConnectedDevices();
+  ```
 
 ### Diffuse scents
   ```java
   /**
    * Diffuses aroma at device's ports.
    *
-   * @param aromaShooters device to communicate.
    * @param duration diffusing duration in milliseconds.
    * @param booster whether booster is used or not.
    * @param ports port numbers to diffuse aroma.
    */
-  void diffuse(List<AromaShooter> aromaShooters, int duration, boolean booster, int... ports);
+  controller.diffuseAll(duration, booster, ports);
   ```  
 ### Stop diffusing
   ```java
+  /**
+   * Stops all ports of current connected devices if they are diffusing.
+   */
+  controller.stopAllPorts();
+  
   /**
    * Stops all ports if they are diffusing aroma.
    *
    * @param aromaShooter device to communicate.
    */
-  void stopAllPorts(AromaShooter aromaShooter);
-
-  /**
-   * Stops all ports of current connected devices if they are diffusing.
-   */
-  void stopAllPorts();
+  controller.stopAllPorts(AromaShooter aromaShooter);
   ```
 
 **For more information, please checkout this repository and refer to the [sample project](https://github.com/aromajoin/controller-sdk-android/tree/master/sample).**  
