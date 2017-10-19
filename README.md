@@ -4,14 +4,14 @@
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 
-**The Android version of AromaShooterController library which is used to communicate with [Aroma Shooter devices](https://aromajoin.com/hardware/shooters/aroma-shooter-1)**  
+**The Android version of AromaShooterController library which is used to communicate with [Aroma Shooter devices](https://aromajoin.com/hardware/shooters/aroma-shooter-1)**.
 
 # Table of Contents
 1. [Supported devices](#supported-devices)  
-2. [Dependency](#dependency)
+2. [Installation](#installation)
 3. [Usage](#usage)
     * [Connect](#connect)
-    	* [BLE](#bluetooth-ble)
+      * [BLE](#bluetooth-ble)
       * [USB](#usb)
     * [Get connected devices](#get-connected-devices)
     * [Diffuse scents](#diffuse-scents)
@@ -22,7 +22,7 @@
 * Aroma Shooter Bluetooth BLE version 
 * Aroma Shooter USB version
 
-## Dependency
+## Installation
 The Gradle dependency is available via Maven Central. 
 
 Firstly, add this on top of your app/build.gradle:
@@ -81,11 +81,11 @@ There are 3 options to have *connection screen* in your application.
 		```
 	- *Connect*
 		```java
-		aromaShooterController.connect(aromaShooter, connectCallback);  
+		controller.connect(aromaShooter, connectCallback);  
 		```
 	- *Disconnect*
 		```java
-		aromaShooterController.disconnect(aromaShooter, disconnectCallback);  
+		controller.disconnect(aromaShooter, disconnectCallback);  
 		```
 
 #### USB
@@ -99,11 +99,11 @@ There are 3 options to have *connection screen* in your application.
   ```  
 - *Connect*
   ```java
-  aromaShooterController.connect(aromaShooter. connectCallback);  
+  controller.connect(aromaShooter. connectCallback);  
   ```
 - *Disconnect*
   ```java
-  aromaShooterController.disconnect(aromaShooter, disconnectCallback);  
+  controller.disconnect(aromaShooter, disconnectCallback);  
   ```
 ### Get connected devices
   ```java
