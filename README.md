@@ -29,7 +29,6 @@ Firstly, add this on top of your app/build.gradle:
 ```gradle
 repositories {
     maven { url "http://dl.bintray.com/aromajoin/maven" }
-    maven { url "https://jitpack.io" } // We use a third-party library hosted on jitpack
 }
 ```
 Then, add the `controller-sdk` dependence in your module's `build.gradle` file:
