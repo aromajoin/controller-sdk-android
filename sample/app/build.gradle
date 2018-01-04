@@ -12,14 +12,13 @@ def versionMinor = 1
 def versionPatch = 0
 
 android {
-  compileSdkVersion rootProject.ext.compileSdkVersion
-
-  buildToolsVersion rootProject.ext.buildToolsVersion
+  compileSdkVersion 27
+  buildToolsVersion '27.0.3'
 
   defaultConfig {
     applicationId "com.aromajoin.controllersdksample"
-    minSdkVersion rootProject.ext.minSdkVersion
-    targetSdkVersion rootProject.ext.targetSdkVersion
+    minSdkVersion 19
+    targetSdkVersion 27
     versionCode versionMajor * 10000 + versionMinor * 100 + versionPatch
     versionName "${versionMajor}.${versionMinor}.${versionPatch}"
   }
@@ -37,6 +36,7 @@ android {
 }
 
 dependencies {
-  compile "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
-  compile 'com.aromajoin.sdk:android:2.0.0-rc1'
+  implementation 'com.android.support:appcompat-v7:27.0.2'
+  implementation 'com.android.support:design:27.0.2'
+  implementation 'com.aromajoin.sdk:android:2.1.7'
 }
