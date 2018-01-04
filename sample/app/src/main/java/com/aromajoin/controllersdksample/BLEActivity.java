@@ -11,16 +11,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author QuangNguyen (quangctkm9207).
+ * The screen where you can control AromaShooter BLE.
  */
-
 public class BLEActivity extends ASBaseActivity {
   private final int DEFAULT_DURATION = 3000; // Unit: millisecond
   List<Integer> ports = new ArrayList<>(); // port-to-diffuse list
   private AndroidBLEController bleController;
 
-  @Override
-  protected void onCreate(@Nullable Bundle savedInstanceState) {
+  @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_ble);
 

@@ -15,6 +15,9 @@ import com.aromajoin.sdk.core.device.AromaShooter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The screen where you can control AromaShooter USB.
+ */
 public class USBActivity extends AppCompatActivity {
   private static final String TAG = USBActivity.class.getSimpleName();
 
