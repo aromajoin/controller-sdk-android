@@ -48,6 +48,13 @@ Make sure that you enable **Java 8 compile** in your `gradle.build`.
     }
   }
 ```
+And we use `Android design support library` to show Snackbar notification, please include it if your app has not used this yet.
+```gradle
+dependencies {
+    // ... other dependencies
+    compile "com.android.support:design:27.1.0"
+}
+```
 ## Usage  
 ### Connect
 There are small differences between BLE connection and USB connetion.
