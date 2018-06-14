@@ -1,3 +1,5 @@
+[English](https://github.com/aromajoin/controller-sdk-android) / [日本語](README-JP.md)
+
 # Controller SDK for Android
 
 [ ![Download](https://api.bintray.com/packages/aromajoin/maven/com.aromajoin.sdk%3Aandroid/images/download.svg) ](https://bintray.com/aromajoin/maven/com.aromajoin.sdk%3Aandroid/_latestVersion)
