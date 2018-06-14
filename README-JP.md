@@ -13,27 +13,27 @@
 2. [インストール](#インストール)
 3. [使用法](#使用法)
     * [接続する](#接続する)
-      * [BLE](#bluetooth-ble)
+      * [Bluetooth](#bluetooth)
       * [USB](#usb)
     * [接続されたデバイス](#接続されたデバイス)
-    * [香りを拡散する](#香りを拡散する)
-    * [拡散を止める](#拡散を止める)
+    * [香りを噴射する](#香りを噴射する)
+    * [拡散を止める](#噴射を止める)
 4. [ライセンス](#license)
 
 ## 対応デバイス
-* Aroma Shooter Bluetooth BLE 
-* Aroma Shooter USB
+* Aroma Shooter Bluetoothタイプ
+* Aroma Shooter USBタイプ
 
 ## インストール
 Gradle
 
-まず、これを `app/build.gradle`の上に追加してください。
+初めに以下のコードを `app/build.gradle`ファイルの上に追加してください。
 ```gradle
 repositories {
     maven { url "http://dl.bintray.com/aromajoin/maven" }
 }
 ```
-次に、モジュールの`build.gradle`ファイルに`controller-sdk`依存関係を追加します。
+次にモジュールの`build.gradle`ファイルに`controller-sdk`依存関係を追加します。
 ```gradle
 dependencies {
     // ... other dependencies
@@ -50,7 +50,7 @@ dependencies {
     }
   }
 ```
-Snackbar通知を表示するために`Android design support library`を使用しています。あなたのアプリがこれをまだ使用していない場合は、それを含めてください。
+Snackbar通知を表示するために`Android design support library`を使用しています。アプリがこれをまだ使用していない場合は、それを含めてください。
 ```gradle
 dependencies {
     // ... other dependencies
@@ -59,9 +59,9 @@ dependencies {
 ```
 ## 使用法  
 ### 接続する
-BLE接続とUSB接続には小さな違いがあります。
-#### Bluetooth BLE
-Bluetooth BLE接続を介してアロマシューターで作業している場合、アプリケーションに*接続画面*を持つ3つのオプションがあります。
+Bluetooth接続とUSB接続には小さな違いがあります。
+#### Bluetooth
+Bluetooth接続を介してアロマシューターで作業している場合、アプリケーションに*接続画面*を持つ3つのオプションがあります。
 
 1. Extend **ASBaseActivity**には、デフォルトの接続画面に移動するためのバーボタンがあります。
 2. `Intent`を使用して、デフォルトの接続画面に正常に移動する。
@@ -117,19 +117,19 @@ Bluetooth BLE接続を介してアロマシューターで作業している場�
   List<AromaShooter> aromaShooters = controller.getConnectedDevices();
   ```
 
-### 香りを拡散する
+### 香りを噴射する
   ```java
   /**
-  * @param duration     拡散持続時間（ミリ秒）。
-  * @param booster      ブースターが使用されているかどうかを判定する。(true: より強く拡散する, false: より弱く拡散する)
-  * @param ports        カートリッジ番号を拡散する。値：1 ~ 6.
+  * @param duration     噴射持続時間（ミリ秒）。
+  * @param booster      ブースターが使用されているかどうかを判定する。(true: より強く噴射する, false: より弱く噴射する)
+  * @param ports        カートリッジ番号を噴射する。値：1 ~ 6.
   */
   controller.diffuseAll(duration, booster, ports);
   ```  
-### 拡散を止める
+### 噴射を止める
   ```java
   /**
-   * 接続されているすべてのポートが拡散している場合は、それらを停止します。
+   * 接続されているすべてのポートが噴射している場合は、それらを停止します。
    */
   controller.stopAllPorts();
   
