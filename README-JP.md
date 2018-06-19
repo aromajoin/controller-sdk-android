@@ -17,7 +17,7 @@
       * [USB](#usb)
     * [接続されたデバイス](#接続されたデバイス)
     * [香りを噴射する](#香りを噴射する)
-    * [拡散を止める](#噴射を止める)
+    * [噴射を止める](#噴射を止める)
 4. [ライセンス](#license)
 
 ## 対応デバイス
@@ -59,9 +59,9 @@ dependencies {
 ```
 ## 使用法  
 ### 接続する
-Bluetooth接続とUSB接続には小さな違いがあります。
+Bluetooth接続とUSB接続ではわずかな違いがあります。
 #### Bluetooth
-Bluetooth接続を介してアロマシューターで作業している場合、アプリケーションに*接続画面*を持つ3つのオプションがあります。
+Bluetooth接続を介してアロマシューターで作業している場合、アプリケーションに接続画面を表示するには、3つの選択肢があります。
 
 1. Extend **ASBaseActivity**には、デフォルトの接続画面に移動するためのバーボタンがあります。
 2. `Intent`を使用して、デフォルトの接続画面に正常に移動する。
@@ -78,7 +78,7 @@ Bluetooth接続を介してアロマシューターで作業している場合�
 		```java
 		controller.startScan(context, discoverCallback);
 		```  
-	　Activity/Fragmentを停止するときにスキャンを止めることを忘れないでください。
+	　Activity/Fragmentを停止するときに、スキャンを止めることを忘れないでください。
 
 		```java
 		protected void onPause() {
