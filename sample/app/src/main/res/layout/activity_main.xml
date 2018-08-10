@@ -9,14 +9,14 @@
       android:id="@+id/button_ble"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="@string/ble_connection"
       android:onClick="chooseBLE"
+      android:text="@string/ble_connection"
       />
   <Button
       android:id="@+id/button_usb"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="@string/usb_connection"
       android:onClick="chooseUSB"
+      android:text="@string/usb_connection"
       />
 </LinearLayout>
