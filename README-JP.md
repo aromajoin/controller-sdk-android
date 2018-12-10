@@ -37,7 +37,8 @@ repositories {
 ```gradle
 dependencies {
     // ... other dependencies
-    compile 'com.aromajoin.sdk:android:2.*.*'
+    implementation 'com.aromajoin.sdk:core:2.*.*'
+    implementation 'com.aromajoin.sdk:android:2.*.*'
 }
 ```
 `gradle.build`で**Java8コンパイル**を有効にしてください。
