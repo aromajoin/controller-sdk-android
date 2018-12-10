@@ -37,7 +37,8 @@ Then, add the `controller-sdk` dependence in your module's `build.gradle` file:
 ```gradle
 dependencies {
     // ... other dependencies
-    compile 'com.aromajoin.sdk:android:2.*.*'
+    implementation 'com.aromajoin.sdk:core:2.2.0'
+    implementation 'com.aromajoin.sdk:android:2.2.0'
 }
 ```
 Make sure that you enable **Java 8 compile** in your `gradle.build`.
@@ -54,7 +55,7 @@ And we use `Android design support library` to show Snackbar notification, pleas
 ```gradle
 dependencies {
     // ... other dependencies
-    compile "com.android.support:design:27.1.0"
+    implementation "com.android.support:design:27.1.0"
 }
 ```
 ## Usage  
