@@ -37,8 +37,8 @@ Then, add the `controller-sdk` dependence in your module's `build.gradle` file:
 ```gradle
 dependencies {
     // ... other dependencies
-    implementation 'com.aromajoin.sdk:core:2.2.0'
-    implementation 'com.aromajoin.sdk:android:2.2.0'
+    implementation 'com.aromajoin.sdk:core:2.3.0'
+    implementation 'com.aromajoin.sdk:android:2.2.1'
 }
 ```
 Make sure that you enable **Java 8 compile** in your `gradle.build`.
