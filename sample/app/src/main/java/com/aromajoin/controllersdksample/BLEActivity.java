@@ -5,7 +5,7 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.view.View;
 import com.aromajoin.sdk.android.ble.AndroidBLEController;
-import com.aromajoin.sdk.android.ble.ui.activity.ASBaseActivity;
+import com.aromajoin.sdk.android.ble.ui.ASBaseActivity;
 import com.aromajoin.sdk.core.device.AromaShooter;
 import java.util.ArrayList;
 import java.util.List;
