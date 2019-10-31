@@ -137,7 +137,7 @@ There are 3 options to have *connection screen* in your application.
  * @param duration              diffusing duration in milliseconds.
  * @param boosterIntensity      booster port. Value: 0~100.
  * @param fanIntensity          fan port. Value: 0~100.
- * @param ports                 cartridge numbers to diffuse aroma. Value: 1 ~ 6.
+ * @param ports                 array of ports. Value: Port(portNumber, portIntensity)
  */
 
 controller.diffuseAll(duration, boosterIntensity, fanIntensity, ports);
