@@ -130,22 +130,7 @@ There are 3 options to have *connection screen* in your application.
    */
   controller.diffuseAll(duration, booster, ports);
   ```  
-### Stop diffusing
-  ```java
-  /**
-   * Stops all ports of current connected devices if they are diffusing.
-   */
-  controller.stopAllPorts();
-  
-  /**
-   * Stops all ports if they are diffusing aroma.
-   *
-   * @param aromaShooter device to communicate.
-   */
-  controller.stopAllPorts(AromaShooter aromaShooter);
-  ```
-  
-  * Diffuse scents method for AS2 (AromaShooter 2) devices only
+    * Diffuse scents method for AS2 (AromaShooter 2) devices only
 ```java
 /**
  * Diffuses aroma at specific ports from all connected devices.
@@ -161,6 +146,21 @@ Port port2 = new Port(2, 50);    // intensity is 50 for port 2
 
 controller.diffuseAll(3000, 0, 100, [port1, port2]);
 ```
+### Stop diffusing
+  ```java
+  /**
+   * Stops all ports of current connected devices if they are diffusing.
+   */
+  controller.stopAllPorts();
+  
+  /**
+   * Stops all ports if they are diffusing aroma.
+   *
+   * @param aromaShooter device to communicate.
+   */
+  controller.stopAllPorts(AromaShooter aromaShooter);
+  ```
+
 
 **For more information, please checkout this repository and refer to the [sample project](https://github.com/aromajoin/controller-sdk-android/tree/master/sample).**  
 **If you get any issues or require any new features, please create a [new issue](https://github.com/aromajoin/controller-sdk-android/issues).**
