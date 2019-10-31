@@ -127,7 +127,7 @@ Bluetooth接続を介してアロマシューターで作業している場合�
   */
   controller.diffuseAll(duration, booster, ports);
   ```  
-  * AS2（Aroma Shooter 2）デバイスのみのディフューザー香りメソッド
+* AS2（Aroma Shooter 2）デバイスのみのディフューザー香りメソッド
 ```java
 /**
  * AS2のすべての接続デバイスからの特定のポートでの香りの拡散
