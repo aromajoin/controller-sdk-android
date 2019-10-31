@@ -130,7 +130,7 @@ There are 3 options to have *connection screen* in your application.
    */
   controller.diffuseAll(duration, booster, ports);
   ```  
-*Diffuse scents method for AS2 (AromaShooter 2) devices only
+* Diffuse scents method for AS2 (AromaShooter 2) devices only
 ```java
 /**
  * Diffuses aroma at specific ports from all connected devices.
