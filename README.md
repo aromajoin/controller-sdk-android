@@ -10,19 +10,24 @@
 
 # Table of Contents
 1. [Supported devices](#supported-devices)  
-2. [Installation](#installation)
-3. [Usage](#usage)
+2. [Prerequisites](#prerequisites)
+3. [Installation](#installation)
+4. [Usage](#usage)
     * [Connect](#connect)
       * [BLE](#bluetooth-ble)
       * [USB](#usb)
     * [Get connected devices](#get-connected-devices)
     * [Diffuse scents](#diffuse-scents)
     * [Stop diffusing](#stop-diffusing)
-4. [License](#license)
+5. [License](#license)
 
 ## Supported devices
 * Aroma Shooter Bluetooth BLE version 
 * Aroma Shooter USB version
+
+## Prerequisites
+* Android 4.4 and later
+* For USB connection: USB OTG is required
 
 ## Installation
 The Gradle dependency is available via Maven Central. 
