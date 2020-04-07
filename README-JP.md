@@ -9,20 +9,25 @@
 **[Aroma Shooter](https://aromajoin.com/products/aroma-shooter)との通信に使用されるAromaShooterControllerSDKのAndroid版です。**  
 
 # 目次
-1. [対応デバイス](#対応デバイス)  
-2. [インストール](#インストール)
-3. [使用法](#使用法)
+1. [対応デバイス](#対応デバイス)
+2. [前提条件](#前提条件)
+3. [インストール](#インストール)
+4. [使用法](#使用法)
     * [接続する](#接続する)
       * [Bluetooth](#bluetooth)
       * [USB](#usb)
     * [接続されたデバイス](#接続されたデバイス)
     * [香りを噴射する](#香りを噴射する)
     * [噴射を止める](#噴射を止める)
-4. [ライセンス](#license)
+5. [ライセンス](#ライセンス)
 
 ## 対応デバイス
 * Aroma Shooter Bluetoothタイプ
 * Aroma Shooter USBタイプ
+
+## 前提条件
+* Android 4.4以降
+* USB接続の場合：USB OTGが必要です
 
 ## インストール
 Gradle
