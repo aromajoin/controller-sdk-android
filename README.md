@@ -103,6 +103,8 @@ There are 3 options to have *connection screen* in your application.
 		```
 
 #### USB
+Note: currently, it can control only 1 Aroma Shooter. 
+
 - *Initialize an AndroidUSBController object*
   ```java
   AndroidUSBController controller =  new AndroidUSBController(usbManager);
