@@ -102,6 +102,7 @@ Bluetooth接続を介してアロマシューターで作業している場合�
 		```
 
 #### USB
+注：現在、制御できるアロマシューターは1つだけです。
 - *AndroidUSBControllerオブジェクトを初期化する。*
   ```java
   AndroidUSBController controller =  new AndroidUSBController(usbManager);
