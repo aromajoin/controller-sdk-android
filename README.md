@@ -31,6 +31,17 @@
 * For USB connection: USB OTG is required
 
 ## Installation
+
+### #1. Manually
+* Please download [two files - controller-sdk-core.jar and controller-sdk.aar](https://github.com/aromajoin/controller-sdk-android/releases/tag/v2.4.4).
+* Then put them under the folder (app/libs/).
+* Update the app's build.gradle file to include these dependences.
+```gradle
+  implementation files("libs/controller-sdk.aar")
+  implementation files("libs/controller-sdk-core.jar")
+```
+
+### #2. Via Maven Central (JCenter Bintray) - Deprecated
 The Gradle dependency is available via Maven Central. 
 
 Firstly, add this on top of your app/build.gradle:
