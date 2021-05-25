@@ -32,7 +32,7 @@
 
 ## インストール
 ### #1。 ファイル
-* [2つのファイル　controller-sdk-core.jarとcontroller-sdk.aar]（https://github.com/aromajoin/controller-sdk-android/releases/tag/v2.4.4）をダウンロードしてください。
+* [controller-sdk-core.jarとcontroller-sdk.aarファイル](https://github.com/aromajoin/controller-sdk-android/releases/tag/v2.4.4)をダウンロードしてください。
 * 次に、「app/libs/」フォルダーにコピーする。
 * アプリのbuild.gradleファイルを更新して、これらの依存関係を含めます。
 ```gradle
