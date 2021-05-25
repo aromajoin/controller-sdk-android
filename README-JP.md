@@ -31,8 +31,19 @@
 * USB接続の場合：USB OTGが必要です
 
 ## インストール
-Gradle
+### #1。 ファイル
+* [2つのファイル　controller-sdk-core.jarとcontroller-sdk.aar]（https://github.com/aromajoin/controller-sdk-android/releases/tag/v2.4.4）をダウンロードしてください。
+* 次に、「app/libs/」フォルダーにコピーする。
+* アプリのbuild.gradleファイルを更新して、これらの依存関係を含めます。
+```gradle
+dependencies {
+    // ... other dependencies
+  implementation files("libs/controller-sdk.aar")
+  implementation files("libs/controller-sdk-core.jar")
+}
+```
 
+### #2。 Maven Central経由（JCenter Bintray）- 非推奨
 初めに以下のコードを `app/build.gradle`ファイルの上に追加してください。
 ```gradle
 repositories {
