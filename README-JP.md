@@ -2,7 +2,6 @@
 
 # ControllerSDK - Android版
 
-[ ![Download](https://api.bintray.com/packages/aromajoin/maven/com.aromajoin.sdk%3Aandroid/images/download.svg) ](https://bintray.com/aromajoin/maven/com.aromajoin.sdk%3Aandroid/_latestVersion)
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0.html) 
 [![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/aromajoin-software/)
 
@@ -31,7 +30,19 @@
 * USB接続の場合：USB OTGが必要です
 
 ## インストール
-### #1。 ファイル
+
+### #1。 Maven Central経由
+
+モジュールの`build.gradle`ファイルに`controller-sdk`依存関係を追加します。
+```gradle
+dependencies {
+    // ... other dependencies
+    implementation 'com.aromajoin.sdk:core:2.5.2'
+    implementation 'com.aromajoin.sdk:android:2.4.4'
+}
+```
+
+### #2。 ファイル
 * [controller-sdk-core.jarとcontroller-sdk.aarファイル](https://github.com/aromajoin/controller-sdk-android/releases/tag/v2.4.4)をダウンロードしてください。
 * 次に、「app/libs/」フォルダーにコピーする。
 * アプリのbuild.gradleファイルを更新して、これらの依存関係を含めます。
@@ -43,21 +54,6 @@ dependencies {
 }
 ```
 
-### #2。 Maven Central経由（JCenter Bintray）- 非推奨
-初めに以下のコードを `app/build.gradle`ファイルの上に追加してください。
-```gradle
-repositories {
-    maven { url "http://dl.bintray.com/aromajoin/maven" }
-}
-```
-次にモジュールの`build.gradle`ファイルに`controller-sdk`依存関係を追加します。
-```gradle
-dependencies {
-    // ... other dependencies
-    implementation 'com.aromajoin.sdk:core:2.5.1'
-    implementation 'com.aromajoin.sdk:android:2.4.0'
-}
-```
 `gradle.build`で**Java8コンパイル**を有効にしてください。
 ```gradle
   android {
