@@ -2,7 +2,6 @@
 
 # Controller SDK for Android
 
-[ ![Download](https://api.bintray.com/packages/aromajoin/maven/com.aromajoin.sdk%3Aandroid/images/download.svg) ](https://bintray.com/aromajoin/maven/com.aromajoin.sdk%3Aandroid/_latestVersion)
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0.html) 
 [![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/aromajoin-software/)
 
@@ -31,8 +30,20 @@
 * For USB connection: USB OTG is required
 
 ## Installation
+There are two options to add the library into your project.
+### #1. Via Maven Central
+The Gradle dependency is available via Maven Central. 
 
-### #1. Manually
+Please add the `controller-sdk` dependence in your module's `build.gradle` file:
+```gradle
+dependencies {
+    // ... other dependencies
+    implementation 'com.aromajoin.sdk:core:2.5.2'
+    implementation 'com.aromajoin.sdk:android:2.4.4'
+}
+```
+
+### #2. Manually
 * Please download [two files - controller-sdk-core.jar and controller-sdk.aar](https://github.com/aromajoin/controller-sdk-android/releases/tag/v2.4.4).
 * Then put them under the folder (app/libs/).
 * Update the app's build.gradle file to include these dependences.
@@ -41,23 +52,6 @@
   implementation files("libs/controller-sdk-core.jar")
 ```
 
-### #2. Via Maven Central (JCenter Bintray) - Deprecated
-The Gradle dependency is available via Maven Central. 
-
-Firstly, add this on top of your app/build.gradle:
-```gradle
-repositories {
-    maven { url "http://dl.bintray.com/aromajoin/maven" }
-}
-```
-Then, add the `controller-sdk` dependence in your module's `build.gradle` file:
-```gradle
-dependencies {
-    // ... other dependencies
-    implementation 'com.aromajoin.sdk:core:2.5.2'
-    implementation 'com.aromajoin.sdk:android:2.4.4'
-}
-```
 Make sure that you enable **Java 8 compile** in your `gradle.build`.
 ```gradle
   android {
@@ -75,6 +69,7 @@ dependencies {
     implementation "com.android.support:design:27.1.0"
 }
 ```
+
 ## Usage  
 ### Connect
 There are small differences between BLE connection and USB connetion.
