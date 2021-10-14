@@ -2,8 +2,10 @@ package com.aromajoin.controllersdksample;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.Nullable;
 import android.view.View;
+
+import androidx.annotation.Nullable;
+
 import com.aromajoin.sdk.android.ble.AndroidBLEController;
 import com.aromajoin.sdk.android.ble.ui.ASBaseActivity;
 import com.aromajoin.sdk.core.device.AromaShooter;

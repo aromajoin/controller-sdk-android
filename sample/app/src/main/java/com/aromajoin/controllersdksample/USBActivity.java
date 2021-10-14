@@ -4,11 +4,12 @@ import android.content.Context;
 import android.hardware.usb.UsbManager;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.Nullable;
-
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.aromajoin.sdk.android.usb.AndroidUSBController;
 import com.aromajoin.sdk.core.callback.ConnectCallback;
 import com.aromajoin.sdk.core.device.AromaShooter;
