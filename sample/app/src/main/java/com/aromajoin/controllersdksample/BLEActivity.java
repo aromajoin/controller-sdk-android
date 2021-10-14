@@ -3,9 +3,7 @@ package com.aromajoin.controllersdksample;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-
 import androidx.annotation.Nullable;
-
 import com.aromajoin.sdk.android.ble.AndroidBLEController;
 import com.aromajoin.sdk.android.ble.ui.ASBaseActivity;
 import com.aromajoin.sdk.core.device.AromaShooter;
@@ -27,7 +25,7 @@ public class BLEActivity extends ASBaseActivity {
     bleController = AndroidBLEController.getInstance();
   }
 
-  private int[] portIds = {
+  private final int[] portIds = {
       R.id.button_port1, R.id.button_port2, R.id.button_port3, R.id.button_port4, R.id.button_port5,
       R.id.button_port6
   };
@@ -48,7 +46,7 @@ public class BLEActivity extends ASBaseActivity {
   /**
    * Uses runnable to send command which allows to diffuse multiple ports at the same time.
    */
-  private Runnable diffuseTask = () -> {
+  private final Runnable diffuseTask = () -> {
     if (ports.size() == 0) {
       return;
     }

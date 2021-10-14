@@ -6,10 +6,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.aromajoin.sdk.android.usb.AndroidUSBController;
 import com.aromajoin.sdk.core.callback.ConnectCallback;
 import com.aromajoin.sdk.core.device.AromaShooter;
