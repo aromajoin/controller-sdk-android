@@ -31,46 +31,14 @@
 
 ## インストール
 
-### #1。 Maven Central経由
-
 モジュールの`build.gradle`ファイルに`controller-sdk`依存関係を追加します。
 ```gradle
 dependencies {
-    // ... other dependencies
     implementation 'com.aromajoin.sdk:core:2.5.2'
-    implementation 'com.aromajoin.sdk:android:2.4.4'
+    implementation 'com.aromajoin.sdk:android:2.4.6'
 }
 ```
 
-### #2。 ファイル
-* [controller-sdk-core.jarとcontroller-sdk.aarファイル](https://github.com/aromajoin/controller-sdk-android/releases/tag/v2.4.4)をダウンロードしてください。
-* 次に、「app/libs/」フォルダーにコピーする。
-* アプリのbuild.gradleファイルを更新して、これらの依存関係を含めます。
-```gradle
-dependencies {
-    // ... other dependencies
-  implementation files("libs/controller-sdk.aar")
-  implementation files("libs/controller-sdk-core.jar")
-}
-```
-
-`gradle.build`で**Java8コンパイル**を有効にしてください。
-```gradle
-  android {
-    //...
-    compileOptions {
-      sourceCompatibility JavaVersion.VERSION_1_8
-      targetCompatibility JavaVersion.VERSION_1_8
-    }
-  }
-```
-Snackbar通知を表示するために`Android design support library`を使用しています。アプリがこれをまだ使用していない場合は、それを含めてください。
-```gradle
-dependencies {
-    // ... other dependencies
-    compile "com.android.support:design:27.1.0"
-}
-```
 ## 使用法  
 ### 接続する
 Bluetooth接続とUSB接続ではわずかな違いがあります。
@@ -150,7 +118,6 @@ Bluetooth接続を介してアロマシューターで作業している場合�
  * @param fanIntensity          ファンポート。値： 0~100.
  * @param ports                 ポートの配列。値: Port(portNumber, portIntensity)
  */
- 
 controller.diffuseAll(duration, boosterIntensity, fanIntensity, ports);
 ```
 ### 噴射を止める
