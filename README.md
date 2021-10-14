@@ -31,43 +31,14 @@
 * For USB connection: USB OTG is required
 
 ## Installation
-There are two options to add the library into your project.
-### #1. Via Maven Central
+
 The Gradle dependency is available via Maven Central. 
 
 Please add the `controller-sdk` dependence in your module's `build.gradle` file:
 ```gradle
 dependencies {
-    // ... other dependencies
-    implementation 'com.aromajoin.sdk:core:2.5.2'
-    implementation 'com.aromajoin.sdk:android:2.4.4'
-}
-```
-
-### #2. Manually
-* Please download [two files - controller-sdk-core.jar and controller-sdk.aar](https://github.com/aromajoin/controller-sdk-android/releases/tag/v2.4.4).
-* Then put them under the folder (app/libs/).
-* Update the app's build.gradle file to include these dependences.
-```gradle
-  implementation files("libs/controller-sdk.aar")
-  implementation files("libs/controller-sdk-core.jar")
-```
-
-Make sure that you enable **Java 8 compile** in your `gradle.build`.
-```gradle
-  android {
-    //...
-    compileOptions {
-      sourceCompatibility JavaVersion.VERSION_1_8
-      targetCompatibility JavaVersion.VERSION_1_8
-    }
-  }
-```
-And we use `Android design support library` to show Snackbar notification, please include it if your app has not used this yet.
-```gradle
-dependencies {
-    // ... other dependencies
-    implementation "com.android.support:design:27.1.0"
+    implementation "com.aromajoin.sdk:core:2.5.2"
+    implementation "com.aromajoin.sdk:android:2.4.6"
 }
 ```
 
@@ -154,7 +125,6 @@ Note: currently, it can control only 1 Aroma Shooter.
  * @param fanIntensity          fan port. Value: 0~100.
  * @param ports                 array of ports. Value: Port(portNumber, portIntensity)
  */
-
 controller.diffuseAll(duration, boosterIntensity, fanIntensity, ports);
 ```
 ### Stop diffusing
